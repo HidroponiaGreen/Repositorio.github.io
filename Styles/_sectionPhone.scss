@@ -1,15 +1,14 @@
 @media (max-width: 600px){
 
-    #DOMslayer{
+    #section{
         
-        article{
+        #DOMslayer{
         font-family: sans-serif;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        .card{
-            
+        .card{    
         margin: 3%;
         width: 80%;
         border: 1% solid rgb(0, 0, 0);
