@@ -1,8 +1,12 @@
 @media (min-width: 600px){
+    .activateBtn{;
+        background: aqua;
+
+    }
 
     #section{
         
-        article{
+        #DOMslayer{
         font-family: sans-serif;
         display: grid;
         grid-template-columns: 40% 40%;

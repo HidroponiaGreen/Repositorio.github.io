@@ -1,49 +1,46 @@
+function btnclick(botons){
+    for(const bus of btn){
+      bus.className = "btn";
+      console.log(bus);}
+  botons.className = "btn activateBtn"
+}  
+  function buscarTipo(arr, tpp){
+    const nuevosArticulos = [];
+    let reoder = arr.filter((el) => el.tipo == tpp);
+    crearElementos(reoder);
+  }
 
-function reordenarPrecios(arr, fn){
-    const nuevosNumeros = [];
-    let reoder = arr.map((el) => el.id);
-    reoder.sort(fn);
-    reoder.forEach(nuevoArray => {
-  let productosNuevos = arr.find((el) => el.id === nuevoArray);
-  nuevosNumeros.push(productosNuevos);
-  });
-  console.log(nuevosNumeros);
-  crearElementos(nuevosNumeros);
-}
-function crearElementos(arr){
 
-    
+function crearElementos(arr){  
     for(const kit of arr){
         let container = document.createElement("div");
         container.innerHTML =`
-        <div>
-        <h2>Nombre: ${kit.nombre}</h2>
-        <h2>Id del producto: ${kit.id}</h2>
-        <h2>Precio: $${kit.descripcion}</h2>
+        <img src="${kit.img}"></img>
+        <div class="container">
+        <h3>${kit.nombre}</h3>
+        <p>${kit.descripcion}</p>
+        <p><a href="${kit.enlace}" target="_blank">Contactenos</a></p>
         </div>
         `;
-        
-    container.className ="contenedor carta-productos";
+    container.className ="card";
     DOMslayer.appendChild(container);
     }
 }
 function vaciarElements(){
-    DOMslayer.innerHTML =``;
-    acu++;
-    localStorage.setItem("codeBoton", acu);
-    contador.innerHTML = `<h2>Contador: ${acu}</h2>`
-
-}
-
-let DOMslayer = document.getElementById("DOMslayer"); 
-let boton1 = document.getElementById("boton-original");
-let boton2 = document.getElementById("boton-ordenarPreciosMenor");
-let boton3 = document.getElementById("boton-ordenarPreciosMayor");
-let contador = document.getElementById("contador");
-let acu = 0;
+    DOMslayer.innerHTML =``; 
+  }
+let DOMslayer = document.getElementById("DOMslayer");
+let btn = document.getElementsByClassName("btn"); 
+let boton1 = document.getElementById("boton-ordenarPiso");
+let boton2 = document.getElementById("boton-ordenarGerminador");
+let boton3 = document.getElementById("boton-ordenarPiramidal");
+let boton4 = document.getElementById("boton-ordenarColgante");
+let boton5 = document.getElementById("boton-ordenarSimple");
+let Colgante = "Colgante", Germinador = "Germinador", Piso = "Piso", Piramide = "Piramide", Simple = "Simple";  
 acu = localStorage.getItem("codeBoton")
 const menor = ((a, b) => a - b);
 const mayor = ((a, b) => b - a);
+console.log(btn);
 
 
 
@@ -55,10 +52,10 @@ DOMslayer.append(container);   */
 const articulos = [
   {
     nombre: "Kit hidroponico de piso 20 plantas",
-    tipo: "piso",
+    tipo: "Piso",
     descripcion: "Medidas: 2,10m largo x0,85 m alto x0,60 m base. Dos niveles de cultivo más un depósito de 22 litros. Posee bomba bajo consumo, 20 canastas separadas cada 20cm, sustrato mineral, nutrientes, soportes, manual de instalación",
     enlace: "https://wa.me/540111537949445/?text=Kit-hidroponico-de-piso-20-plantas",
-    img: "mg/kit/KitPiso20.png",
+    img: "img/kit/KitPiso20.png",
     id: "1"
   },
 
@@ -123,7 +120,7 @@ const articulos = [
     tipo: "Piramide",
     descripcion: "Medidas 4.50m largo x 1.70m alto x 1.40m base Dieciséis niveles de cultivo más deposito cuádruple de 88 litros. Sistema con recarga automática de agua.Posee bomba bajo consumo, 160 canastas separadas cada 20cm, sustrato mineral, nutrientes, soportes, manual de instalación y estructura desarmable.",
     enlace: "https://wa.me/540111537949445/?text=Kit-hidroponico-piramidal-de-160-plantas",
-    img: "img/kit/KitPiso160Profesional.png",
+    img: "img/kit/KitPiramide160Profesional.png",
     id: "9"
   },  
   {
@@ -136,11 +133,14 @@ const articulos = [
   },
 
 ]
-boton1.onclick = () =>{vaciarElements();  crearElementos(articulos);}
-boton2.onclick = () =>{vaciarElements();  reordenarPrecios(articulos, menor);}
-boton3.onclick = () =>{vaciarElements();  reordenarPrecios(articulos, mayor);}
-crearElementos(articulos);
 
+boton1.onclick = () =>{vaciarElements();  buscarTipo(articulos, Piso);  btnclick(boton1)}
+boton2.onclick = () =>{vaciarElements();  buscarTipo(articulos, Germinador);  btnclick(boton2)}
+boton3.onclick = () =>{vaciarElements();  buscarTipo(articulos, Piramide);  btnclick(boton3)}
+boton4.onclick = () =>{vaciarElements();  buscarTipo(articulos, Colgante);  btnclick(boton4)}
+boton5.onclick = () =>{vaciarElements();  buscarTipo(articulos, Simple);  btnclick(boton5)}
+crearElementos(articulos);
+buscarTipo(articulos, Colgante);
 
 
 
@@ -153,7 +153,13 @@ crearElementos(articulos);
 
 /*-----------------------JSON-----------------------*/
 
-
+/*
+acu++;
+localStorage.setItem("codeBoton", acu);
+contador.innerHTML = `<h2>Contador: ${acu}</h2>` 
+let contador = document.getElementById("contador");
+let acu = 0;
 let nombresJson = {nombre: "miguelito", edad: 25, boleans: true}
 const enJSON = JSON.stringify(nombresJson);
 console.log(enJSON);
+*/
