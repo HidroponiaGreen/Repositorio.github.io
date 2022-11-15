@@ -20,7 +20,7 @@
 }
 
 .botones {
-  margin: 0 20%;
+  margin: 0 auto;
 }
 .botones button {
   display: inline-block;
@@ -30,8 +30,8 @@
   color: #FFFFFF;
   text-align: center;
   font-size: 100%;
-  padding: 20px;
-  width: 200px;
+  padding: 2%;
+  width: 20%;
   cursor: pointer;
   margin: 1%;
 }
