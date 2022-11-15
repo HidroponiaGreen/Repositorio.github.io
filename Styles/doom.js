@@ -29,12 +29,20 @@ function crearElementos(arr){
 }
 function vaciarElements(){
     DOMslayer.innerHTML =``;
+    acu++;
+    localStorage.setItem("codeBoton", acu);
+    contador.innerHTML = `<h2>Contador: ${acu}</h2>`
+
 }
 
 let DOMslayer = document.getElementById("DOMslayer"); 
 let boton1 = document.getElementById("boton-original");
 let boton2 = document.getElementById("boton-ordenarPreciosMenor");
 let boton3 = document.getElementById("boton-ordenarPreciosMayor");
+let contador = document.getElementById("contador");
+let acu = 0;
+acu = localStorage.getItem("codeBoton")
+
 const cursos = [
     {nombre: "Kit piramidal", precio: 12524, id: 1},
     {nombre: "Kit de piso", precio: 30001, id: 2},
