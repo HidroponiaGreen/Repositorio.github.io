@@ -123,9 +123,6 @@
   }
 }
 @media (min-width: 600px) {
-  .activateBtn {
-    background: aqua;
-  }
   #section #DOMslayer {
     font-family: sans-serif;
     display: grid;
