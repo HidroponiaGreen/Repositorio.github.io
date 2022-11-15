@@ -1,0 +1,24 @@
+#DOMslayer{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.carta-productos{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: beige;
+    margin: 2%;
+    div{
+        
+        h2{
+            text-align: center;
+        }
+    }
+}
+
+.botones{
+    margin: 0 40%;
+}

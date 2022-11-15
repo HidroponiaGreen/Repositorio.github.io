@@ -1,0 +1,68 @@
+
+@media (min-width: 600px){
+        header{
+        position: sticky;
+        width: 100%;
+        height: 100%;
+        top:0px;
+        display:inline-block;
+        z-index: 2;
+    
+
+    .Menu-Bar{
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-template-rows: 100px;
+        margin: 0px 180px;
+        justify-content: stretch;
+        align-content: space-around;
+        background-color: map-get($map: $estilos, $key: colorCatalogo   );
+        
+        img{
+            width: 100%;
+            height: 100%;
+            
+            &:hover{
+                filter: contrast(170%);
+                transition-duration: 2s;
+                
+                
+            }
+            
+        }
+        
+        div{
+            display: grid;
+            grid-template-columns: 25% 25% 35%;
+            align-self: center;
+            justify-self: normal;
+            margin: 0px;
+            
+            a{
+                display: block;
+                    color: black;
+                    border: 1px solid black;
+                    margin: 0px 15px;
+                    background-color: map-get($map: $estilos, $key: colorHeader);
+                    text-decoration: none;
+                    text-align: center;
+                    font-family: Calibri, 'Trebuchet MS', sans-serif, Arial, Helvetica, sans-serif;
+                    font-size: 20px;
+                    //Brush Script MT
+                &:hover{
+
+                    //padding-bottom: 60px;
+                    //height: 70px;
+                    transform: scale(1.1);
+                    transition-duration: 1s;
+                    transition-timing-function: ease-out;
+
+                }
+                
+            }
+
+        }        
+    }      
+    #headerPhone{display: none;}
+}
+}

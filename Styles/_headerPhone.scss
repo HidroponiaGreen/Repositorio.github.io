@@ -1,0 +1,48 @@
+@media (max-width: 600px){
+
+    #header{
+        display: none;
+    }
+
+    #headerPhone{
+        position: sticky;
+        width: 80%;
+        height: 80%;
+        top:0px;
+        display:inline-block;
+        z-index: 2;
+
+        display: grid;
+        grid-template-columns: 15% auto;
+        grid-template-rows: 100%;
+        margin: auto;
+        justify-content: stretch;
+        align-content: space-around;
+        background-color: map-get($map: $estilos, $key: colorCatalogo);
+
+            .img-phone{
+                width: 100%;
+                height: 100%;
+            }
+
+            div{
+                display: grid;
+                grid-template-columns: 25% 25% 35%;
+                align-self: center;
+                a{
+                    display: block;
+                        color: black;
+                        border: 1px solid black;
+                        margin: 0px 5%;
+                        background-color: map-get($map: $estilos, $key: colorHeader);
+                        text-decoration: none;
+                        text-align: center;
+                        font-family: Calibri, 'Trebuchet MS', sans-serif, Arial, Helvetica, sans-serif;
+                        font-size: 100%;
+                    
+                }
+    
+            }        
+
+        }
+    }       
